@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pro Ukrajinu">
+  <meta name="author" content="">
+  <title>Pro Ukrajinu · daruj potřebné</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="alternate icon" href="img/favicon.ico">
+  <link rel="mask-icon" href="img/favicon.svg" color="#ff8a01">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/form-validation.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+  <script>
+    //Definice funkce
+    function msieversion() {
+   
+   var ua = window.navigator.userAgent;
+   var msie = ua.indexOf("MSIE ");
+   
+   if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // Pokud jde o IE
+   {
+     alert("Používáte nepodporovaný prohlížeč. Prosíme, použijte Google Chrome, Mozilla Firefox, Microsoft Edge apod."); //
+   }
+   
+   
+   return false;
+   }
+   
+   msieversion(); //Spustí funkci
+     </script>
+  <div class="container">
+    <main>
+      <div class=" col-md-10 offset-md-1 mb-3 text-center">
+        <img src="img/pozadi-ukrajina.jpg" class="img-fluid" alt="snímek vytištěné metodiky">
+        <h1><a href="index.html">Pro Ukrajinu</a></h1>
+        <h2>Darujte konkrétní věci, které někdo potřebuje...</h2><br>
+        <p class="mb-3">Chcete darovat, ale nevíte co je potřeba? Nebo jste z Ukrajiny a naopak něco potřebujete? Podívejte se níže... jendoduchý poptávko/nabídkový systém pomoci Sed convallis magna eu sem. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget...
+        </p>
+        <p> 
+          
+            <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="link-secondary"> více o projektu</a></p>
+      </div>
+      <div class=" col-md-10 offset-md-1 text-center">
+        <div class="collapse " id="collapseExample">
+          <div class="card card-body mb-5">
+            <p class="text-left mb-0"><small>
+              Nullam sit amet magna in magna gravida vehicula. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Fusce suscipit libero eget elit. Duis condimentum augue id magna semper rutrum. Nam quis nulla. Maecenas lorem. Donec quis nibh at felis congue commodo. Maecenas libero. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Nunc auctor. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Suspendisse sagittis ultrices augue. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nullam rhoncus aliquam metus. In rutrum. Vivamus porttitor turpis ac leo. Duis pulvinar.
+              </small></p>
+          </div>
+        </div>
+      </div>
+
+    
+
+      <div class="col-md-10 offset-md-1 ">
+
+        <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <button class="nav-link text-xs-center active" id="nav-potrebuji-tab" data-bs-toggle="tab" data-bs-target="#nav-potrebuji" type="button" role="tab" aria-controls="nav-potrebuji" aria-selected="true"><i class="bi bi-question"></i> Potřebuji pomoc</button>
+            <button class="nav-link text-xs-center" id="nav-nabizim-tab" data-bs-toggle="tab" data-bs-target="#nav-nabizim" style="margin-right: 1px;" type="button" role="tab" aria-controls="nav-nabizim" aria-selected="false"><i class="bi bi-gift"></i> Nabízím pomoc</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="m-3 tab-pane fade show active" id="nav-potrebuji" role="tabpanel" aria-labelledby="nav-potrebuji-tab">
+
+          <form class="needs-validation" novalidate id="main-form">
+            <div class="row ">
+              <div class="col-md-6 col-sm-12 mb-3">
+                <label for="Jméno" class="form-label"><i class="bi bi-person"></i> Jméno</label>
+                <input type="text" class="form-control" name="jmeno" id="jmeno" placeholder="Jan" required>
+                <div class="invalid-feedback">
+                  Prosíme, vyplňte vaše jméno.
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12 mb-3">
+                <label for="Příjmení" class="form-label"><i class="bi bi-person"></i> Příjmení</label>
+                <input type="text" class="form-control" name="prijmeni" id="prijmeni" placeholder="Novák" required>
+                <div class="invalid-feedback">
+                  Prosíme, vyplňte vaše příjmení.
+                </div>
+              </div>
+              
+              
+              
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-12 mb-3">
+                <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="vas@email.cz" required>
+                <div class="invalid-feedback">
+                  Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat.
+                </div>
+              </div>
+              
+              <div class="col-md-6 col-sm-12 mb-3">
+                <label for="telefon" class="form-label"><i class="bi bi-phone"></i> Telefon</label>
+                <input type="text" class="form-control" name="telefon" id="telefon" placeholder="+420 123 456 789" required>
+                <div class="invalid-feedback">
+                  Prosíme, vložte váš telefon, ať vás můžeme kontaktovat.
+                </div>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <label for="adresa" class="form-label"><i class="bi bi-house"></i> Adresa doručení</label>
+                  <input type="text" class="form-control" name="adresa" id="adresa" placeholder="Květinková 35, Plzeň">
+                </div>
+                
+                </div>
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <label for="poznamka" class="form-label"><i class="bi bi-pencil"></i> Poznámka</label>
+                  <textarea class="form-control" placeholder="Chcete nám ještě něco dělit?" id="poznamka"></textarea>
+  
+                </div>
+                
+                </div>
+              
+            
+            
+             
+              <hr class="my-4">
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <label for="potreba" class="form-label"><i class="bi bi-gift"></i> Co potřebujete</label>
+                  <input type="text" class="form-control form-control-lg" name="potreba" id="potreba" placeholder="napište, co potřebujete">
+                </div>
+                <div class="row">
+                  <div class="col-12 mb-3">
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-circle"></i> Přidat řádek</button>
+                  </div>
+                
+                </div>
+
+              
+              
+              
+              
+            </div>
+            <hr class="my-4">
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" id="souhlas" required>
+              <label class="form-check-label" for="souhlas">Souhlasím se zpracováním <a href="gdpr.pdf" target="_blank" class="link-secondary">osobních údajů</a> za účelem této sbírkové akce.</label>
+            </div>
+            <button class="w-100 btn btn-success btn-lg" type="submit">Odeslat <i class="bi bi-check2"></i></button>
+          </form>
+        </div>
+
+
+          
+          <div class="m-3 tab-pane fade" id="nav-nabizim" role="tabpanel" aria-labelledby="nav-nabizim-tab">
+            
+
+            mmmm
+
+            
+          </div>
+        </div>
+
+        
+      </div>
+
+         
+      
+
+      <div class="col-sm-10 offset-sm-1 pt-3">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 text-center">
+            <p class="text-muted pt-3"><small>Za podpory:</small></p>
+            <div class="row">
+              <div class="col-sm-12 py-3">
+                <a href="https://www.skaut.cz" target="_blank" title="Skaut"><img
+                    src="img/skaut.svg" class="img-fluid loga" alt="MŽP"> </a>
+              </div>
+              
+
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="my-5 text-muted text-center text-small">
+    <p class="mb-2"><small>Váš prohlížeč může ukládat tzv. <a href="https://cs.wikipedia.org/wiki/HTTP_cookie" class="link-secondary" target=_blank>cookies</a> soubory, nicméně tento web s nimi nijak aktivně nepracuje.</small></p>
+      <p class="mb-1"><small>2022 <a href="#" target="_blank"
+        class="link-secondary">odkaz někam</a></small></p>  
+  </footer>
+  </div>
+  
+</body>
+
+</html>
