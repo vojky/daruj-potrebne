@@ -13,14 +13,21 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/gh/bbscout/daruj-potrebne@main/css/style.css" rel="stylesheet">
+  <style>
+    .form-control.no-validate:valid {
+      border-color: #ced4da;
+      padding-right: .75rem;
+      background: none;
+    }
+  </style>
 </head>
 
 <body class="bg-light">
@@ -94,17 +101,17 @@
           <div class="m-3 tab-pane fade show active" id="nav-potrebuji" role="tabpanel"
             aria-labelledby="nav-potrebuji-tab">
 
-            <form class="needs-validation" novalidate id="requests-form">
+            <form class="needs-validation" id="requests-form">
               <div class="row ">
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="Jméno" class="form-label"><i class="bi bi-person"></i> Jméno</label>
+                  <label for="Jméno" class="form-label"><i class="bi bi-person"></i> Jméno*</label>
                   <input type="text" class="form-control" name="jmeno" id="jmeno" placeholder="Jan" required>
                   <div class="invalid-feedback">
                     Prosíme, vyplňte vaše jméno.
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="Příjmení" class="form-label"><i class="bi bi-person"></i> Příjmení</label>
+                  <label for="Příjmení" class="form-label"><i class="bi bi-person"></i> Příjmení*</label>
                   <input type="text" class="form-control" name="prijmeni" id="prijmeni" placeholder="Novák" required>
                   <div class="invalid-feedback">
                     Prosíme, vyplňte vaše příjmení.
@@ -117,7 +124,7 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
                   <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
-                  <input type="email" class="form-control" name="email" id="email" placeholder="vas@email.cz" required>
+                  <input type="email" class="form-control no-validate" name="email" id="email" placeholder="vas@email.cz">
                   <div class="invalid-feedback">
                     Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat.
                   </div>
@@ -125,8 +132,7 @@
 
                 <div class="col-md-6 col-sm-12 mb-3">
                   <label for="telefon" class="form-label"><i class="bi bi-phone"></i> Telefon</label>
-                  <input type="text" class="form-control" name="telefon" id="telefon" placeholder="+420 123 456 789"
-                    required>
+                  <input type="text" class="form-control no-validate" name="telefon" id="telefon" placeholder="+420 123 456 789">
                   <div class="invalid-feedback">
                     Prosíme, vložte váš telefon, ať vás můžeme kontaktovat.
                   </div>
@@ -134,64 +140,153 @@
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="adresa" class="form-label"><i class="bi bi-house"></i> Adresa doručení</label>
-                  <input type="text" class="form-control" name="adresa" id="adresa" placeholder="Květinková 35, Plzeň">
+                  <label for="adresa" class="form-label"><i class="bi bi-house"></i> Adresa doručení*</label>
+                  <input type="text" class="form-control" name="adresa" id="adresa" placeholder="Květinková 35, Plzeň" required>
+                  <div class="invalid-feedback">
+                    Prosíme, vyplňte adresu nebo místo, kde vám předáme potřebné vybavení.
+                  </div>
                 </div>
 
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
                   <label for="poznamka" class="form-label"><i class="bi bi-pencil"></i> Poznámka</label>
-                  <textarea class="form-control" placeholder="Chcete nám ještě něco dělit?" id="poznamka"></textarea>
-
+                  <textarea class="form-control no-validate" placeholder="Chcete nám ještě něco dělit?" name="poznamka" id="poznamka"></textarea>
                 </div>
-
               </div>
-
-
-
 
               <hr class="my-4">
               <div class="row">
-                <div class="row" id="potreby">
-                  <div class="col-12 mb-3">
-                    <label for="potreba" class="form-label"><i class="bi bi-gift"></i> Co potřebujete</label>
-                    <input type="text" class="form-control form-control" name="potreba-1" id="potreba-1"
-                      placeholder="napište, co potřebujete">
+                <div class="col-12 mb-3">
+                  <label for="vec" class="form-label"><i class="bi bi-gift"></i> Co potřebujete*</label>
+                  <input type="text" class="form-control" name="vec-1" id="vec-1"
+                      placeholder="napište, co potřebujete" required>
+                  <div class="invalid-feedback">
+                    Napište, prosím, alespoň jednu věc, kterou od nás potřebujete zajistit.
                   </div>
                 </div>
-
-                <div class="row">
-                  <div class="col-12 mb-3">
-                    <button type="button" class="btn btn-success" onclick="addRow()"><i class="bi bi-plus-circle"></i>
+                <div id="dalsi-veci">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <button type="button" class="btn btn-success" onclick="addRow()"><i class="bi bi-plus-circle"></i>
                       Přidat
                       řádek</button>
-                  </div>
-
                 </div>
-
-
-
-
-
               </div>
               <hr class="my-4">
-              <div class="form-check mb-3">
-                <input type="checkbox" class="form-check-input" id="souhlas" required>
-                <label class="form-check-label" for="souhlas">Souhlasím se zpracováním <a href="gdpr.pdf"
-                    target="_blank" class="link-secondary">osobních údajů</a> za účelem této sbírkové akce.</label>
-              </div>
-              <button class="w-100 btn btn-success btn-lg" type="button" onclick="send()">Odeslat <i
+              <button class="w-100 btn btn-success btn-lg" type="button" onclick="send('requests-form')">Odeslat <i
                   class="bi bi-check2"></i></button>
             </form>
+            <div class="alert alert-warning alert-dismissible fade collapse mt-3" id="requests-success">
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              <strong>Váš požadavek byl úspěšně odeslán!</strong>
+            </div>
           </div>
+          
 
 
 
           <div class="m-3 tab-pane fade" id="nav-nabizim" role="tabpanel" aria-labelledby="nav-nabizim-tab">
 
 
-            mmmm
+            <form class="needs-validation" id="requests-form">
+              <div class="row ">
+                <div class="col-md-6 col-sm-12 mb-3">
+                  <label for="Jméno" class="form-label"><i class="bi bi-person"></i> Jméno*</label>
+                  <input type="text" class="form-control" name="jmeno" id="jmeno" placeholder="Jan" required>
+                  <div class="invalid-feedback">
+                    Prosíme, vyplňte vaše jméno.
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12 mb-3">
+                  <label for="Příjmení" class="form-label"><i class="bi bi-person"></i> Příjmení*</label>
+                  <input type="text" class="form-control" name="prijmeni" id="prijmeni" placeholder="Novák" required>
+                  <div class="invalid-feedback">
+                    Prosíme, vyplňte vaše příjmení.
+                  </div>
+                </div>
+
+
+
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-12 mb-3">
+                  <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                  <input type="email" class="form-control no-validate" name="email" id="email" placeholder="vas@email.cz">
+                  <div class="invalid-feedback">
+                    Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat.
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 mb-3">
+                  <label for="telefon" class="form-label"><i class="bi bi-phone"></i> Telefon*</label>
+                  <input type="text" class="form-control no-validate" name="telefon" id="telefon" placeholder="+420 123 456 789" required>
+                  <div class="invalid-feedback">
+                    Prosíme, vložte váš telefon, ať vás můžeme kontaktovat.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <label for="adresa" class="form-label"><i class="bi bi-house"></i> Adresa doručení*</label>
+                  <input type="text" class="form-control" name="adresa" id="adresa" placeholder="Květinková 35, Plzeň" required>
+                  <div class="invalid-feedback">
+                    Prosíme, vyplňte adresu nebo místo, kde vám předáme potřebné vybavení.
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <label for="poznamka" class="form-label"><i class="bi bi-pencil"></i> Poznámka</label>
+                  <textarea class="form-control no-validate" placeholder="Chcete nám ještě něco dělit?" name="poznamka" id="poznamka"></textarea>
+                </div>
+              </div>
+
+              <hr class="my-4">
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          </div>
+                      </th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <hr class="my-4">
+              <button class="w-100 btn btn-success btn-lg" type="button" onclick="send('requests-form')">Odeslat <i
+                  class="bi bi-check2"></i></button>
+            </form>
 
 
           </div>
@@ -199,6 +294,7 @@
 
 
       </div>
+      
 
 
 
@@ -211,7 +307,7 @@
               <div class="col-sm-12 py-3">
                 <a href="https://www.skaut.cz" target="_blank" title="Skaut"><img
                     src="https://cdn.jsdelivr.net/gh/bbscout/daruj-potrebne@main/img/skaut.svg" class="img-fluid loga"
-                    alt="MŽP"> </a>
+                    alt="Skaut"> </a>
               </div>
 
 
@@ -230,33 +326,56 @@
   </footer>
   </div>
   <script>
-    i = 2;
+    pocetVeci = 1;
+    
     function addRow() {
-      var newRow = `<input type="text" class="form-control form-control" name="potreba-${i}" id="potreba-${i}" placeholder="napište, co potřebujete">`;
+      pocetVeci++
+      var newRow = `<input type="text" class="form-control no-validate" name="vec-${pocetVeci}" id="vec-${pocetVeci}" placeholder="napište, co potřebujete">`;
       var el = document.createElement("div");
       el.classList.add("col-12", "mb-3");
       el.innerHTML = newRow;
-      document.getElementById("potreby").appendChild(el);
-      i++
+      document.getElementById("dalsi-veci").appendChild(el);
     }
 
-    function send() {
-      var form = document.getElementById('requests-form');
+    function send(formId) {
+      var form = document.getElementById(formId);
+
+      if(!form.checkValidity()) {
+        form.classList.add('was-validated')
+        return
+      }
+
       var formData = new FormData(form);
       var data = [];
-
+      var head = {};
       formData.forEach(function (value, key) {
-        if(!key.includes("potreba-")) {
-          console.log(key);
+        if(key.includes("vec-")) {
+          if(value) {
+            data.push(value);
+          }
+          } else {
+          head[key] = value;
         }
-        //object[key] = value;
       });
-      /*
-      formData.forEach(function (value, key) {
-        object[key] = value;
-      });
-      console.log(object)*/
+
+      data = data.map(item => {
+        return Object.assign({}, head, {
+          vec: item
+        });
+      })
+    
+      console.log(data);
+
+      //google.script.run.withSuccessHandler(onSuccess('requests-success',form)).addRequest(data);
     }
+
+    function onSuccess(alertId,form) {
+      form.classList.remove('was-validated');
+      form.reset();
+      document.getElementById('dalsi-veci').innerHTML = '';
+      document.getElementById(alertId).classList.add('show');
+    }
+    
 
   </script>
 </body>
