@@ -14,18 +14,48 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-  </script>
+    </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> -->
   <link href="https://cdn.jsdelivr.net/gh/bbscout/daruj-potrebne@main/css/style.css" rel="stylesheet">
   <style>
+    h1,
+    h1 a:focus,
+    h1 a {
+      font-weight: 300;
+      color: #47a0c7;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    h1 a:hover {
+      text-decoration: none;
+      color: #4192b4;
+
+    }
+
+    a:hover {
+      text-decoration: none;
+
+
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
     .form-control.no-validate:valid {
       border-color: #ced4da;
       padding-right: .75rem;
       background: none;
+    }
+
+    .form-select.no-validate:valid {
+      border-color: #ced4da;
+      background-image: none!important;
     }
   </style>
 </head>
@@ -81,9 +111,11 @@
         <div class="collapse " id="collapseExample">
           <div class="card card-body mb-5">
             <p class="text-left mb-0"><small>
-                Když jsme se rozhodovali, jak se zapojit do pomoci Ukrajině, tak byla materiální sbírka jedním z prvních nápadů. Jenže taková sbírka je
-                jednak logisticky velmi náročná a jednak často pomůže lidem v dobré víře darovat věci, které už nechtějí, ale které taky nikomu nepomohou.
-                Naším cílem bylo vytvořit sbírku, která cíleně pomůže lidem v nouzi najít to, co skutečně potřebují. 
+                Když jsme se rozhodovali, jak se zapojit do pomoci Ukrajině, tak byla materiální sbírka jedním z prvních
+                nápadů. Jenže taková sbírka je
+                jednak logisticky velmi náročná a jednak často pomůže lidem v dobré víře darovat věci, které už
+                nechtějí, ale které taky nikomu nepomohou.
+                Naším cílem bylo vytvořit sbírku, která cíleně pomůže lidem v nouzi najít to, co skutečně potřebují.
               </small></p>
             <p class="text-left mb-0"><small>
                 Pojďme to společně zkusit 💗.
@@ -133,7 +165,8 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
                   <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
-                  <input type="email" class="form-control no-validate" name="email" id="email" placeholder="vas@email.cz">
+                  <input type="email" class="form-control no-validate" name="email" id="email"
+                    placeholder="vas@email.cz">
                   <div class="invalid-feedback">
                     Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat.
                   </div>
@@ -141,7 +174,8 @@
 
                 <div class="col-md-6 col-sm-12 mb-3">
                   <label for="telefon" class="form-label"><i class="bi bi-phone"></i> Telefon</label>
-                  <input type="text" class="form-control no-validate" name="telefon" id="telefon" placeholder="+420 123 456 789">
+                  <input type="text" class="form-control no-validate" name="telefon" id="telefon"
+                    placeholder="+420 123 456 789">
                   <div class="invalid-feedback">
                     Prosíme, vložte váš telefon, ať vás můžeme kontaktovat.
                   </div>
@@ -150,7 +184,8 @@
               <div class="row">
                 <div class="col-12 mb-3">
                   <label for="adresa" class="form-label"><i class="bi bi-house"></i> Adresa doručení*</label>
-                  <input type="text" class="form-control" name="adresa" id="adresa" placeholder="Květinková 35, Plzeň" required>
+                  <input type="text" class="form-control" name="adresa" id="adresa" placeholder="Květinková 35, Plzeň"
+                    required>
                   <div class="invalid-feedback">
                     Prosíme, vyplňte adresu nebo místo, kde vám předáme potřebné vybavení.
                   </div>
@@ -160,7 +195,8 @@
               <div class="row">
                 <div class="col-12 mb-3">
                   <label for="poznamka" class="form-label"><i class="bi bi-pencil"></i> Poznámka</label>
-                  <textarea class="form-control no-validate" placeholder="Chcete nám ještě něco dělit?" name="poznamka" id="poznamka"></textarea>
+                  <textarea class="form-control no-validate" placeholder="Chcete nám ještě něco sdělit?" name="poznamka"
+                    id="poznamka"></textarea>
                 </div>
               </div>
 
@@ -168,8 +204,8 @@
               <div class="row">
                 <div class="col-12 mb-3">
                   <label for="vec" class="form-label"><i class="bi bi-gift"></i> Co potřebujete*</label>
-                  <input type="text" class="form-control" name="vec-1" id="vec-1"
-                      placeholder="napište, co potřebujete" required>
+                  <input type="text" class="form-control" name="vec-1" id="vec-1" placeholder="napište, co potřebujete"
+                    required>
                   <div class="invalid-feedback">
                     Napište, prosím, alespoň jednu věc, kterou od nás potřebujete zajistit.
                   </div>
@@ -180,8 +216,8 @@
               <div class="row">
                 <div class="col-12 mb-3">
                   <button type="button" class="btn btn-success" onclick="addRow()"><i class="bi bi-plus-circle"></i>
-                      Přidat
-                      řádek</button>
+                    Přidat
+                    řádek</button>
                 </div>
               </div>
               <hr class="my-4">
@@ -220,7 +256,8 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
                   <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
-                  <input type="email" class="form-control no-validate" name="email" id="email" placeholder="vas@email.cz">
+                  <input type="email" class="form-control no-validate" name="email" id="email"
+                    placeholder="vas@email.cz">
                   <div class="invalid-feedback">
                     Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat.
                   </div>
@@ -228,7 +265,8 @@
 
                 <div class="col-md-6 col-sm-12 mb-3">
                   <label for="telefon" class="form-label"><i class="bi bi-phone"></i> Telefon*</label>
-                  <input type="text" class="form-control no-validate" name="telefon" id="telefon" placeholder="+420 123 456 789" required>
+                  <input type="text" class="form-control no-validate" name="telefon" id="telefon"
+                    placeholder="+420 123 456 789" required>
                   <div class="invalid-feedback">
                     Prosíme, vložte váš telefon, ať vás můžeme kontaktovat.
                   </div>
@@ -237,11 +275,11 @@
               <div class="row">
                 <div class="col-12 mb-3">
                   <label for="misto" class="form-label"><i class="bi bi-house"></i> Místo předání</label>
-                  <select class="form-select" aria-label="Default select example" name="misto" id="misto" required>
-                    <option selected>Ups... tady chybí nějaké možnosti</option>
+                  <select class="form-select no-validate" aria-label="výběr místa" name="misto" id="misto" required>
+                    <option disabled>Ups... tady chybí nějaké možnosti</option>
                   </select>
                   <div class="invalid-feedback">
-                    Prosíme, vyplňte adresu nebo místo, kde vám předáme potřebné vybavení.
+                    Prosíme, vyberte místo, kde nám předáte vybrané vybavení.
                   </div>
                 </div>
 
@@ -249,7 +287,8 @@
               <div class="row">
                 <div class="col-12 mb-3">
                   <label for="poznamka" class="form-label"><i class="bi bi-pencil"></i> Poznámka</label>
-                  <textarea class="form-control no-validate" placeholder="Chcete nám ještě něco dělit?" name="poznamka" id="poznamka"></textarea>
+                  <textarea class="form-control no-validate" placeholder="Chcete nám ještě něco sdělit?" name="poznamka"
+                    id="poznamka"></textarea>
                 </div>
               </div>
 
@@ -306,7 +345,9 @@
     <p class="mb-2"><small>Váš prohlížeč může ukládat tzv. <a href="https://cs.wikipedia.org/wiki/HTTP_cookie"
           class="link-secondary" target=_blank>cookies</a> soubory, nicméně tento web s nimi nijak aktivně
         nepracuje.</small></p>
-    <p class="mb-1"><small>S 💙💛 vytvořili <a href="https://ctverak.cz" target="_blank" class="link-secondary">Martin</a> a <a href="https://atelierkrejsa.cz" target="_blank" class="link-secondary">Břéťa</a> © 2022</small></p>
+    <p class="mb-1"><small>S 💙💛 vytvořili <a href="https://ctverak.cz" target="_blank"
+          class="link-secondary">Martin</a> a <a href="https://atelierkrejsa.cz" target="_blank"
+          class="link-secondary">Břéťa</a> © 2022</small></p>
   </footer>
   </div>
   <script>
@@ -314,7 +355,7 @@
     google.script.run.withSuccessHandler(showRequests).getRequests()
     google.script.run.withSuccessHandler(showPlaces).getPlaces();
 
-     function showPlaces(data) {
+    function showPlaces(data) {
       var template = `<option selected disabled value="">Vyberte místo předání</option>`;
       data.forEach((row, i) => {
         template += `<option>${row.adresa} (${row.otevreno})</option>`;
@@ -323,12 +364,12 @@
       console.log(template);
 
       document.getElementById("misto").innerHTML = template;
-     }
+    }
 
     function showRequests(data) {
-      
+
       data = data.map((row, i) => {
-      var template = `<tr>
+        var template = `<tr>
                         <td>
                           <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="${row.id}" name="vec-offer-${i} id="vec-offer-${i}">
@@ -343,7 +384,7 @@
       el.innerHTML = data;
       document.getElementById("requests").appendChild(el);
     }
-    
+
     function addRow() {
       pocetVeci++
       var newRow = `<input type="text" class="form-control no-validate" name="vec-${pocetVeci}" id="vec-${pocetVeci}" placeholder="napište, co potřebujete">`;
@@ -356,7 +397,7 @@
     function send(formId) {
       var form = document.getElementById(formId);
 
-      if(!form.checkValidity()) {
+      if (!form.checkValidity()) {
         form.classList.add('was-validated')
         return
       }
@@ -364,11 +405,11 @@
       var data = [];
       var head = {};
       formData.forEach(function (value, key) {
-        if(key.includes("vec-")) {
-          if(value) {
+        if (key.includes("vec-")) {
+          if (value) {
             data.push(value);
           }
-          } else {
+        } else {
           head[key] = value;
         }
       });
@@ -386,26 +427,26 @@
           return item;
         })
       }
-      
-      
+
+
       console.log(data);
 
-      if(formId == "requests-form") {
-        google.script.run.withSuccessHandler(onSuccess('requests-success',form)).addRequest(data);
+      if (formId == "requests-form") {
+        google.script.run.withSuccessHandler(onSuccess('requests-success', form)).addRequest(data);
       } else if (formId == "offers-form") {
-        google.script.run.withSuccessHandler(onSuccess('offers-success',form)).addOffer(data);
+        google.script.run.withSuccessHandler(onSuccess('offers-success', form)).addOffer(data);
       }
 
-      
+
     }
 
-    function onSuccess(alertId,form) {
+    function onSuccess(alertId, form) {
       form.classList.remove('was-validated');
       form.reset();
       document.getElementById('dalsi-veci').innerHTML = '';
       document.getElementById(alertId).classList.add('show');
     }
-    
+
 
   </script>
 </body>
