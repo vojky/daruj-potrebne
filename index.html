@@ -55,10 +55,21 @@
         <img src="https://cdn.jsdelivr.net/gh/bbscout/daruj-potrebne@main/img/pozadi-ukrajina.jpg" class="img-fluid"
           alt="snímek vytištěné metodiky">
         <h1><a href="index.html">Pro Ukrajinu</a></h1>
-        <h2>Darujte konkrétní věci, které někdo potřebuje...</h2><br>
-        <p class="mb-3">Chcete darovat, ale nevíte co je potřeba? Nebo jste z Ukrajiny a naopak něco potřebujete?
-          Podívejte se níže... jendoduchý poptávko/nabídkový systém pomoci Sed convallis magna eu sem. Duis bibendum,
-          lectus ut viverra rhoncus, dolor nunc faucibus libero, eget...
+        <h2>Nebojte si říct o pomoc, nebo darujte konkrétní věci, které někdo potřebuje...</h2><br>
+        <p class="mb-3">
+          Jste v nouzi a potřebujete pomoct? Utekli jste před válečným konfliktem a chybí vám oblečení, vybavení
+          domácnosti nebo jiné zařízení?
+          Nebojte se říct si o pomoc. Jsme tu od toho, abychom vám ji zprostředkovali. A nemusí jít ani o maličkosti.
+          Někdo rád daruje použitý mobil,
+          jiný zase koupí plenky pro miminko. Stačí vyplnit formulář na záložce Potřebuji pomoc a my vám jí zkusíme
+          najít. Jsme tu proto, abychom si pomáhali.
+        </p>
+        <p class="mb-3">
+          Chcete darovat, ale nevíte co je potřeba? Podívejte se níže... Náš systém funguje na základě poptávky a
+          nabídky. Poptávané věci najdete
+          na záložce nabízím pomoc. Přeškrtnuté položky už někdo nabídl, ale zatím jsme je nepředali. Můžete je klidně
+          zaškrtnout také a zvýšit šanci,
+          že daná věc skutečně naplní očekávání.
         </p>
         <p>
 
@@ -70,14 +81,12 @@
         <div class="collapse " id="collapseExample">
           <div class="card card-body mb-5">
             <p class="text-left mb-0"><small>
-                Nullam sit amet magna in magna gravida vehicula. Duis bibendum, lectus ut viverra rhoncus, dolor nunc
-                faucibus libero, eget facilisis enim ipsum id lacus. Fusce suscipit libero eget elit. Duis condimentum
-                augue id magna semper rutrum. Nam quis nulla. Maecenas lorem. Donec quis nibh at felis congue commodo.
-                Maecenas libero. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-                laboriosam, nisi ut aliquid ex ea commodi consequatur? Nunc auctor. Nullam justo enim, consectetuer nec,
-                ullamcorper ac, vestibulum in, elit. Suspendisse sagittis ultrices augue. Duis ante orci, molestie vitae
-                vehicula venenatis, tincidunt ac pede. Nullam rhoncus aliquam metus. In rutrum. Vivamus porttitor turpis
-                ac leo. Duis pulvinar.
+                Když jsme se rozhodovali, jak se zapojit do pomoci Ukrajině, tak byla materiální sbírka jedním z prvních nápadů. Jenže taková sbírka je
+                jednak logisticky velmi náročná a jednak často pomůže lidem v dobré víře darovat věci, které už nechtějí, ale které taky nikomu nepomohou.
+                Naším cílem bylo vytvořit sbírku, která cíleně pomůže lidem v nouzi najít to, co skutečně potřebují. 
+              </small></p>
+            <p class="text-left mb-0"><small>
+                Pojďme to společně zkusit 💗.
               </small></p>
           </div>
         </div>
@@ -184,14 +193,14 @@
               <strong>Váš požadavek byl úspěšně odeslán!</strong>
             </div>
           </div>
-          
+
 
 
 
           <div class="m-3 tab-pane fade" id="nav-nabizim" role="tabpanel" aria-labelledby="nav-nabizim-tab">
 
 
-            <form class="needs-validation" id="requests-form">
+            <form class="needs-validation" id="offers-form">
               <div class="row ">
                 <div class="col-md-6 col-sm-12 mb-3">
                   <label for="Jméno" class="form-label"><i class="bi bi-person"></i> Jméno*</label>
@@ -207,9 +216,6 @@
                     Prosíme, vyplňte vaše příjmení.
                   </div>
                 </div>
-
-
-
               </div>
               <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
@@ -230,8 +236,10 @@
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="adresa" class="form-label"><i class="bi bi-house"></i> Adresa doručení*</label>
-                  <input type="text" class="form-control" name="adresa" id="adresa" placeholder="Květinková 35, Plzeň" required>
+                  <label for="misto" class="form-label"><i class="bi bi-house"></i> Místo předání</label>
+                  <select class="form-select" aria-label="Default select example" name="misto" id="misto" required>
+                    <option selected>Ups... tady chybí nějaké možnosti</option>
+                  </select>
                   <div class="invalid-feedback">
                     Prosíme, vyplňte adresu nebo místo, kde vám předáme potřebné vybavení.
                   </div>
@@ -248,53 +256,29 @@
               <hr class="my-4">
               <div class="row">
                 <div class="col-12 mb-3">
-                  <table class="table">
+                  <table class="table" id="requests">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col"><i class="bi bi-gift"></i> Nabízím následující vybavení</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          </div>
-                      </th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
                   </table>
                 </div>
               </div>
-              <hr class="my-4">
-              <button class="w-100 btn btn-success btn-lg" type="button" onclick="send('requests-form')">Odeslat <i
+              <button class="w-100 btn btn-success btn-lg" type="button" onclick="send('offers-form')">Odeslat <i
                   class="bi bi-check2"></i></button>
             </form>
-
+            <div class="alert alert-warning alert-dismissible fade collapse mt-3" id="offers-success">
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              <strong>Váš požadavek byl úspěšně odeslán!</strong>
+            </div>
 
           </div>
         </div>
 
 
       </div>
-      
+
 
 
 
@@ -322,11 +306,43 @@
     <p class="mb-2"><small>Váš prohlížeč může ukládat tzv. <a href="https://cs.wikipedia.org/wiki/HTTP_cookie"
           class="link-secondary" target=_blank>cookies</a> soubory, nicméně tento web s nimi nijak aktivně
         nepracuje.</small></p>
-    <p class="mb-1"><small>2022 <a href="#" target="_blank" class="link-secondary">odkaz někam</a></small></p>
+    <p class="mb-1"><small>S 💙💛 vytvořili <a href="https://ctverak.cz" target="_blank" class="link-secondary">Martin</a> a <a href="https://atelierkrejsa.cz" target="_blank" class="link-secondary">Břéťa</a> © 2022</small></p>
   </footer>
   </div>
   <script>
     pocetVeci = 1;
+    google.script.run.withSuccessHandler(showRequests).getRequests()
+    google.script.run.withSuccessHandler(showPlaces).getPlaces();
+
+     function showPlaces(data) {
+      var template = `<option selected disabled value="">Vyberte místo předání</option>`;
+      data.forEach((row, i) => {
+        template += `<option>${row.adresa} (${row.otevreno})</option>`;
+      })
+
+      console.log(template);
+
+      document.getElementById("misto").innerHTML = template;
+     }
+
+    function showRequests(data) {
+      
+      data = data.map((row, i) => {
+      var template = `<tr>
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="${row.id}" name="vec-offer-${i} id="vec-offer-${i}">
+                            <span ${row.rezervace ? "style='text-decoration: line-through;'" : ""}>${row.vec}</span>
+                          </div>
+                        </td>
+                      </tr>`;
+        return template;
+      }).join("\n");
+
+      var el = document.createElement("tbody");
+      el.innerHTML = data;
+      document.getElementById("requests").appendChild(el);
+    }
     
     function addRow() {
       pocetVeci++
@@ -344,7 +360,6 @@
         form.classList.add('was-validated')
         return
       }
-
       var formData = new FormData(form);
       var data = [];
       var head = {};
@@ -363,10 +378,25 @@
           vec: item
         });
       })
-    
+
+      if (formId == "offers-form") {
+        data = data.map(item => {
+          item.nabidka = item.vec;
+          delete item.vec;
+          return item;
+        })
+      }
+      
+      
       console.log(data);
 
-      //google.script.run.withSuccessHandler(onSuccess('requests-success',form)).addRequest(data);
+      if(formId == "requests-form") {
+        google.script.run.withSuccessHandler(onSuccess('requests-success',form)).addRequest(data);
+      } else if (formId == "offers-form") {
+        google.script.run.withSuccessHandler(onSuccess('offers-success',form)).addOffer(data);
+      }
+
+      
     }
 
     function onSuccess(alertId,form) {

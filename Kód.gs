@@ -1,5 +1,12 @@
 GOOGLE_SHEET_ID = "1ejPmpiNUMiawfr4St9NNM1gGi1BFZbBvCXKxhDs9Umg";
 
+PLACES_SHEET = "Sběrná místa";
+PLACES_FIELDS = [
+  { name: "Adresa místa", key: "adresa" },
+  { name: "Otevírací doba", key: "otevreno" }
+]
+
+
 REQUESTS_SHEET = "Poptávky";
 REQUESTS_FIELDS = [
   { name: "ID", key: "id" },
@@ -15,8 +22,7 @@ REQUESTS_FIELDS = [
   { name: "Rezervace", key: "rezervace" },
   { name: "Nabízí", key: "nabizi" },
   { name: "Předáno", key: "predano" }
-
-]
+];
 
 OFFERS_SHEET = "Nabídky";
 OFFERS_FIELDS = [
@@ -26,8 +32,9 @@ OFFERS_FIELDS = [
   { name: "Příjmení", key: "prijmeni" },
   { name: "Místo předání", key: "misto" },
   { name: "Telefon", key: "telefon" },
-  { name: "Email", key: "email" }
-]
+  { name: "Email", key: "email" },
+  { name: "Poznámka", key: "poznamka" }
+];
 
 
 
@@ -41,13 +48,19 @@ function init() {
   var requests = ss.getSheetByName(REQUESTS_SHEET);
   if (!requests) {
     requests = ss.insertSheet(REQUESTS_SHEET);
-    requests.appendRow(REQUESTS_FIELDS.map(field => field.name))
+    requests.appendRow(REQUESTS_FIELDS.map(field => field.name));
   }
 
   var offers = ss.getSheetByName(OFFERS_SHEET);
   if (!offers) {
     offers = ss.insertSheet(OFFERS_SHEET);
-    offers.appendRow(OFFERS_FIELDS.map(field => field.name))
+    offers.appendRow(OFFERS_FIELDS.map(field => field.name));
+  }
+
+  var places = ss.getSheetByName(PLACES_SHEET);
+  if (!places) {
+    places = ss.insertSheet(PLACES_SHEET);
+    places.appendRow(PLACES_FIELDS.map(field => field.name));
   }
 }
 
@@ -71,12 +84,72 @@ function appendData(data, sheetName, fields) {
     item.nabizi = `=IFNA(VLOOKUP(A${index};'Nabídky'!$A$2:$C;3;FALSE)&" "&VLOOKUP(A${index};'Nabídky'!$A$2:$E;4;FALSE);"")`;
 
     sheet.appendRow(fields.map(field => item[field.key]))
-    sheet.getRange(index,fields.length-2).insertCheckboxes();
-    sheet.getRange(index,fields.length).insertCheckboxes();
+    if(!item.nabidka) {
+      sheet.getRange(index,fields.length-2).insertCheckboxes();
+      sheet.getRange(index,fields.length).insertCheckboxes();
+    }
+    
     index++
   }
 }
 
 function addRequest(data) {
   appendData(data,REQUESTS_SHEET,REQUESTS_FIELDS);
+}
+
+function addOffer(data) {
+  appendData(data,OFFERS_SHEET,OFFERS_FIELDS);
+}
+
+function getRequests() {
+  var ss = SpreadsheetApp.openById(GOOGLE_SHEET_ID);
+  var sheet = ss.getSheetByName(REQUESTS_SHEET);
+
+  if (!sheet) {
+    init();
+    sheet = ss.getSheetByName(REQUESTS_SHEET);
+  }
+
+  var values = sheet.getRange(2,1,sheet.getLastRow() - 1,sheet.getLastColumn()).getValues();
+
+  var keys = REQUESTS_FIELDS.map(field => field.key);
+  thingIndex = keys.indexOf('vec');
+  reservationIndex = keys.indexOf('rezervace');
+  solvedIndex = keys.indexOf('predano');
+  idIndex = keys.indexOf('id');
+
+  var requests = values.filter(row => {
+    return !row[solvedIndex]
+  })
+
+  requests = requests.map(row => {
+    return { "id": row[idIndex], "vec": row[thingIndex], "rezervace": row[reservationIndex] }
+  })
+
+
+  return requests;
+}
+
+function getPlaces() {
+  var ss = SpreadsheetApp.openById(GOOGLE_SHEET_ID);
+  var sheet = ss.getSheetByName(PLACES_SHEET);
+
+  if (!sheet) {
+    init();
+    sheet = ss.getSheetByName(PLACES_SHEET);
+  }
+
+  var values = sheet.getRange(2,1,sheet.getLastRow() - 1,sheet.getLastColumn()).getValues();
+
+  var keys = PLACES_FIELDS.map(field => field.key);
+
+  var places = values.map(row => {
+    var obj = {};
+    for(var i = 0; i < row.length; i++) {
+      obj[keys[i]] = row[i];
+    }
+    return obj
+  })
+
+  return places;
 }
