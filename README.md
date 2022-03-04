@@ -1,5 +1,7 @@
 # Poptávko - nabídkový formulář materiální pomoci
 
+>**Poznámka na úvod:** Nejsem programátor a nikdy jsem nic nepublikoval open source, tak to prosím omluvte. Za vylepšení kódu i textů budu rád!
+
 ## Jak to funguje
 
 Webová aplikace funguje na bázi Google Scriptu a napojení na Google Tabulku. Na vygenerované URL se objeví formulář se dvěma záložkami:
