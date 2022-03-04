@@ -1,5 +1,19 @@
 # Poptávko - nabídkový formulář materiální pomoci
 
+## Jak to funguje
+
+Webová aplikace funguje na bázi Google Scriptu a napojení na Google Tabulku. Na vygenerované URL se objeví formulář se dvěma záložkami:
+
+- Poptávkový formulář: Zde může každý zadat dvoji poptávku a základní kontaktní údaje.
+- Nabídkový formulář: Zde se (po obnovení stránky) zobrazí všechny nevyřízené poptávky. Dárce si vybere věci, které chce darovat a vyplní krátký kontaktní formulář a vybere sběrné místo.
+
+V Google tabulce se poptávky zobrazují na listu **Poptávky**. Ty jsou rovnou vkládány se vzorcem, který po zadání nabídky k dané poptávce zaškrtne, že si někdo "rezervoval" dodání. Takovéto poptávky se pak ve formuláři zobrazují přeškrtnutě. Jakmile dojde k předání požadovaného vybavení, tak **správce tabulky** zaškrtne u dané poptávky pole "Předáno" a poptávka se již dál veřejně nezobrazuje.
+
+## Demo webové aplikace a tabulky
+
+- [Demo webové aplikace](https://script.google.com/a/macros/skaut.cz/s/AKfycbzjLQ7AUM3BMWuJo8s2ZImEnmTV9B2kLn2lCfyzqmkErTb8m6Ny521Kmpt03oaPzrf_/exec)
+- [Demo Google Tabulky](https://docs.google.com/spreadsheets/d/1I1FZ7phmNEQ6wib5467ucUwkaprIDfjirF6OQ7kiLuI/edit?usp=sharing)
+
 ## Instalace
 
 ### 1. Vytvoření Google tabulky a otevření editoru Apps Script
@@ -50,6 +64,10 @@
 
 - zkopírujte si URL webové aplikace
 
+### 6. Doplňte sběrná místa do Google Tabulky
+
+- V Google tabulce si na listu **Sběrná místa** doplňte přehled sběrných míst, který se zobrazí v nabídkovém formuláři. Bez toho to nebude fungovat!
+
 ### Hotovo
 
 - webovou aplikaci můžete používat přímo zadáním URL `https://script.google...`, což není úplně uživatelsky přívětivé
@@ -61,11 +79,6 @@
     ```
 
   - doporučuji přizpůsobit výšku iframu vašim potřebám (upravit v části `height:2000px;`)
-
-## Demo webové aplikace a tabulky
-
-- [Demo webové aplikace](https://script.google.com/a/macros/skaut.cz/s/AKfycbzjLQ7AUM3BMWuJo8s2ZImEnmTV9B2kLn2lCfyzqmkErTb8m6Ny521Kmpt03oaPzrf_/exec)
-- [Demo Google Tabulky](https://docs.google.com/spreadsheets/d/1I1FZ7phmNEQ6wib5467ucUwkaprIDfjirF6OQ7kiLuI/edit?usp=sharing)
 
 ## Co je v plánu
 
